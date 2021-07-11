@@ -31,6 +31,7 @@ export function clearGrid(sourceId: number, destId: number, walls: boolean[]) {
       let div = document.getElementById(`${i}`);
       if (div === null || div === undefined) return;
       div.style.animation = "";
+      div.style.backgroundColor = "rgb(0, 255, 170)";
       div.classList.remove("visit-animate");
       div.classList.remove("path-animate");
     }

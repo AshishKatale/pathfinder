@@ -81,7 +81,6 @@ async function bidirectional(
           if (gridDest[next] === false) {
             fromDest.push(next);
             parentDest[next] = i * gridWidth + j;
-            // await visit(k);
             gridDest[next] = true;
           }
         }
@@ -202,8 +201,9 @@ const BidirectionalSearch = () => {
       );
     else if (!halt) {
       let dest = document.getElementById(`${destId.current}`) as HTMLDivElement;
+      console.log(halt, dest.id)
       dest.innerHTML = "";
-      dest.style.animation = "";
+      dest.classList.remove("visit-animate")
       dest.style.background = "red";
     }
     if (mounted)
